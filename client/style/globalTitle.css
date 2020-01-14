@@ -16,11 +16,13 @@ body {
 }
 .top-logo-index .top-logo-icon {
   height: 40px;
+  cursor: pointer;
 }
 .top-logo-index .top-logo-name {
   position: relative;
   font-size: 26px;
   color: pink;
+  cursor: pointer;
 }
 
 .top-search {
