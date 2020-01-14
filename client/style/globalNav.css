@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.global-title {
+  height: 50px;
+  width: 100%;
+  background-color: black;
+}
+
+.top-logo-index {
+  display: inline-block;
+  position: relative;
+  padding: 5px 0 0 5%;
+  height: 90%;
+}
+.top-logo-index .top-logo-icon {
+  height: 40px;
+}
+.top-logo-index .top-logo-name {
+  position: relative;
+  font-size: 26px;
+  color: pink;
+}
+
+.top-search {
+  display: inline-block;
+  position: absolute;
+  margin: 15px 0 0 20px;
+  width: 60%;
+  height: 90%;
+}
+.top-search-input {
+  height: 26px;
+  width: 50%;
+}
+.top-search-button {
+  height: 30px;
+  width: 12%;
+  margin-left: 5px;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.top-sign-in {
+  position: relative;
+  float: right;
+  margin: 20px 20px 0 0;
+}
+.top-sign-in .top-sign-in-button {
+  margin-right: 5px;
+  border-radius: 4px;
+  background-color: white;
+}

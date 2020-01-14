@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  <header>
-    <div class="global-nav">
-      
-      <div class="top-logo-index">
-        <img class="top-logo" src="static/flower.png">
-        <a>SummerFlower</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style/globalNav.css" />
+  </head>
+  <body>
+    <!-- header包含图标，名字，搜索栏，确认按钮，注册登录按钮-->
+    <header>
+      <div class="global-title">
+        <!--此处还需要加点回主页的方法 -->
+        <div class="top-logo-index">
+          <img class="top-logo-icon" src="static/flower.png" />
+          <a class="top-logo-name">SummerFlower</a>
+        </div>
+        <div class="top-search">
+          <!--此处不知道是不是需要表单，因为数据需要到数据库搜索
+        需要加一个div用于输入数据时显示可选选项。
+        -->
+          <input type="text" class="top-search-input" />
+          <input type="button" class="top-search-button" value="Flower一下" />
+        </div>
+        <div class="top-sign-in">
+          <!-- 此处没有后续页面，只留两个按钮 -->
+          <input type="button" value="注册" class="top-sign-in-button" />
+          <input type="button" value="登录" class="top-sign-in-button" />
+        </div>
       </div>
-      <div class="top-search">
-        <input type="text" class="top-search-input">
-        <input type="button" class="top-search-button" value="Flower一下">
-      </div>
-      <div class="top-sign-in">
-        <input type="button" value="注册"/>
-        <input type="button" value="登录"/>
-      </div>
-    </div>
-  </header>
-</body>
+    </header>
+  </body>
 </html>
