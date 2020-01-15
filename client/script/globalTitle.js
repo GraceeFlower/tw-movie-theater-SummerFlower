@@ -40,7 +40,7 @@ let topSearchInput = document.getElementsByClassName("top-search-input")[0];
 function searchOperate() {
   let searchContent = topSearchInput.value;
   let searchMovieId = isContain(searchContent);
-  alert(searchMovieId);
+  // alert(searchMovieId);
   if (-1 === searchMovieId) {
     alert("mei");//检测方法，之后要跳转到404页面
     window.locataion.href = "./index.html";
@@ -56,11 +56,11 @@ header.addEventListener("click", function (event) {
   let target = event.target;
   switch (target.className) {
     case ("top-logo-icon"):
-      alert(movieDetailPageId);
-      window.location.href = "./index.html";
+      // alert(movieDetailPageId);
+      // window.location.href = "./index.html";
       break;
     case ("top-logo-name"):
-      window.location.href = "./index.html";
+      // window.location.href = "./index.html";
       break;
     case ("top-search-button"):
       searchOperate();

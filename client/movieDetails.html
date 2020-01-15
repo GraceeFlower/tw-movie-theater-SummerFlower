@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="style/globalTitle.css" />
+
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="style/globalTitle.css" />
   </head>
   <body>
     <!--
@@ -13,20 +15,22 @@
     并且css js文件也应该一样，
     因为所有需求在详情页也要满足
   -->
-    <header>
+    <header class="global-title">
       <div class="global-title">
-        <div class="top-logo-index">
-          <img class="top-logo-icon" src="static/flower.png" />
-          <span class="top-logo-name">SummerFlower</span>
+        <div class="top-logo">
+          <a href="./index.html"><img class="top-logo-icon" src="static/flower.png" /></a>
+          <a href="./index.html" class="top-logo-name">SummerFlower</a>
         </div>
-        <div class="top-search">
-          <input type="text" class="top-search-input" />
-          <input type="button" class="top-search-button" value="Flower一下" />
-        </div>
-        <div class="top-sign-in">
-          <input type="button" value="注册" class="top-sign-in-button" />
-          <input type="button" value="登录" class="top-sign-in-button" />
-        </div>
+        <form action="">
+          <div class="top-search">
+            <input type="text" name="search-text" class="top-search-input" />
+            <input type="submit" name="search-button" class="top-search-button" value="Flower一下" />
+          </div>
+          <div class="top-sign">
+            <input type="button" name="sign-up" value="注册" class="top-sign-button" />
+            <input type="button" name="sign-in" value="登录" class="top-sign-button" />
+          </div>
+        </form>
       </div>
     </header>
   </body>

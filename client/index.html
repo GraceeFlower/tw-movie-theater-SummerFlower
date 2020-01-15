@@ -5,31 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="style/globalTitle.css" />
-    <link rel="stylesheet" type="text/css" href="style/indexContent.css" />
+
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/globalTitle.css" />
+    <link rel="stylesheet" href="style/indexContent.css" />
   </head>
   <body>
     <!-- header包含图标，名字，搜索栏，确认按钮，注册登录按钮-->
-    <header>
-      <div class="global-title">
+    <header class="global-title">
         <!--此处还需要加点回主页的方法 -->
-        <div class="top-logo-index">
-          <img class="top-logo-icon" src="static/flower.png" />
-          <span class="top-logo-name">SummerFlower</span>
+        <div class="top-logo">
+          <a href="./index.html"><img class="top-logo-icon" src="static/flower.png" /></a>
+          <a href="./index.html" class="top-logo-name">SummerFlower</a>
         </div>
-        <div class="top-search">
-          <!--此处不知道是不是需要表单，因为数据需要到数据库搜索
-        需要加一个div用于输入数据时显示可选选项。
-        -->
-          <input type="text" class="top-search-input" />
-          <input type="button" class="top-search-button" value="Flower一下" />
-        </div>
-        <div class="top-sign-in">
-          <!-- 此处没有后续页面，只留两个按钮 -->
-          <input type="button" value="注册" class="top-sign-in-button" />
-          <input type="button" value="登录" class="top-sign-in-button" />
-        </div>
-      </div>
+        <form action="">
+          <div class="top-search">
+            <!--此处不知道是不是需要表单，因为数据需要到数据库搜索
+          需要加一个div用于输入数据时显示可选选项。
+          -->
+            <input type="text" name="search-text" class="top-search-input" />
+            <input type="button" name="search-button" class="top-search-button" value="Flower一下" />
+          </div>
+          <div class="top-sign">
+            <!-- 此处没有后续页面，只留两个按钮 -->
+            <input type="button" name="sign-up" value="注册" class="top-sign-button" />
+            <input type="button" name="sign-in" value="登录" class="top-sign-button" />
+          </div>
+        </form>
     </header>
     <div class="classfication"></div>
     <!-- 电影展示部分：一个DIV  -->

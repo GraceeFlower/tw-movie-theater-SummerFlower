@@ -1,55 +1,56 @@
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
 .global-title {
+  display: flex;
+  padding: 5px;
   height: 50px;
-  width: 100%;
-  background-color: black;
+  background-color: #000;
 }
 
-.top-logo-index {
-  display: inline-block;
-  position: relative;
-  padding: 5px 0 0 5%;
-  height: 90%;
+.top-logo {
+  flex: 0 0 200px;
+  width: 200px;
 }
-.top-logo-index .top-logo-icon {
+
+.top-logo-icon {
+  margin-top: 5px;
   height: 40px;
-  cursor: pointer;
 }
-.top-logo-index .top-logo-name {
-  position: relative;
-  font-size: 26px;
+
+.top-logo > a {
+  vertical-align: middle;
   color: pink;
   cursor: pointer;
+}
+
+form {
+  flex: 1;
+  margin-top: 9px;
 }
 
 .top-search {
   display: inline-block;
   position: absolute;
-  margin: 15px 0 0 20px;
   width: 60%;
-  height: 90%;
 }
+
 .top-search-input {
   height: 26px;
   width: 50%;
 }
+
 .top-search-button {
-  height: 30px;
-  width: 12%;
+  height: 26px;
   margin-left: 5px;
   border-radius: 4px;
-  background-color: white;
+  background-color: #fff;
 }
 
-.top-sign-in {
+.top-sign {
   position: relative;
   float: right;
-  margin: 20px 20px 0 0;
+  line-height: 26px;
 }
-.top-sign-in .top-sign-in-button {
+
+.top-sign .top-sign-button {
   margin-right: 5px;
   border-radius: 4px;
   background-color: white;
