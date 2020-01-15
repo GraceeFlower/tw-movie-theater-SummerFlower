@@ -1,5 +1,6 @@
 let header = document.getElementsByTagName("header")[0];
 let BASIC_URL = 'http://127.0.0.1:8888';
+const movieMenu = document.getElementsByClassName('classification')[0];
 
 //设置一个最大全局变量 所有页面都包含这个参数，只有详情页读取详情内容用这个参数
 window.movieDetailPageId;
@@ -13,6 +14,7 @@ function loadItems() {
     method: 'GET',
     success: function (responseText) {
       data = responseText.subjects;
+      loadMovieMenu(data);
       console.log(data[0].title);//试验data数据格式
       console.log(data[1]);
     }
@@ -50,4 +52,11 @@ function searchOperate() {
     movieDetailPageId = searchMovieId;
     window.location.href = "./movieDetails.html";
   }
+}
+
+function loadMovieMenu(data) {
+  const movieClass = new Set(data.reduce((pre, cur) => pre.concat(cur.genres), []));
+  movieClass.forEach(item => {
+    movieMenu.innerHTML += `<span>${item}</span>`;
+  })
 }
