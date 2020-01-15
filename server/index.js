@@ -11,7 +11,7 @@ const proxyServer = http.createServer((request, response) => {
   response.setHeader('Content-Type', 'text/plain;charset=utf-8');
 
   if (parsedUrl.pathname.indexOf(DOUBAN_MOVIE) > -1) {
-    http.get(`http://api.douban.com${parsedUrl.pathname}?apikey=0df993c66c0c636e29ecbb5344252a4a&${parsedUrl.query}`, res => {
+    http.get(`http://api.douban.com${parsedUrl.pathname}?apikey=0df993c66c0c636e29ecbb5344252a4a&${parsedUrl.query}&start=0&count=100`, res => {
       var body = '';
 
       res.on('data', data => {
