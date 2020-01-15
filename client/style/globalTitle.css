@@ -21,7 +21,7 @@
   cursor: pointer;
 }
 
-form {
+.global-title form {
   flex: 1;
   margin-top: 9px;
 }
