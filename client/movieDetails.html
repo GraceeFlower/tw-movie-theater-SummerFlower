@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style/globalTitle.css" />
+  </head>
+  <body>
+    <!--
+    拷贝自index.html文件 header内容应完全一样 
+    并且css js文件也应该一样，
+    因为所有需求在详情页也要满足
+  -->
+    <header>
+      <div class="global-title">
+        <div class="top-logo-index">
+          <img class="top-logo-icon" src="static/flower.png" />
+          <span class="top-logo-name">SummerFlower</span>
+        </div>
+        <div class="top-search">
+          <input type="text" class="top-search-input" />
+          <input type="button" class="top-search-button" value="Flower一下" />
+        </div>
+        <div class="top-sign-in">
+          <input type="button" value="注册" class="top-sign-in-button" />
+          <input type="button" value="登录" class="top-sign-in-button" />
+        </div>
+      </div>
+    </header>
+  </body>
+  <script src="./script/ajax.js"></script>
+  <script src="./script/globalTitle.js"></script>
 </html>

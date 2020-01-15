@@ -1,6 +1,8 @@
 let header = document.getElementsByTagName("header")[0];
 let BASIC_URL = 'http://127.0.0.1:8888';
-let movieId = '26942674';
+
+//设置一个最大全局变量 所有页面都包含这个参数，只有详情页读取详情内容用这个参数
+window.movieDetailPageId;
 
 const top250 = 'top250';
 let data;
@@ -30,17 +32,23 @@ function isContain(searchContent) {
   return -1;
 }
 
+//searchContent函数在点击搜索时触发，用于查找搜索内容是否包含在数据库，并且进行对应跳转操作
+//内部调用了isContain函数
+//用了一个dom，即搜索框内输入的内容
+//无返回值，直接跳到新的页面， ！！！但现在还需考虑得到的ID如何传递
 let topSearchInput = document.getElementsByClassName("top-search-input")[0];
 function searchOperate() {
   let searchContent = topSearchInput.value;
   let searchMovieId = isContain(searchContent);
   alert(searchMovieId);
   if (-1 === searchMovieId) {
-    alert("mei");
+    alert("mei");//检测方法，之后要跳转到404页面
     window.location.href = "./index.html";
   } else {
-    alert(searchMovieId);
-    window.location.href = "./index.html";
+    alert(searchMovieId);//检测方法，之后要跳转到新的详情页面
+    //设置一个最大全局变量 所有页面都包含这个参数，只有详情页读取详情内容用这个参数
+    movieDetailPageId = searchMovieId;
+    window.location.href = "./movieDetails.html";
   }
 }
 
@@ -48,6 +56,7 @@ header.addEventListener("click", function (event) {
   let target = event.target;
   switch (target.className) {
     case ("top-logo-icon"):
+      alert(movieDetailPageId);
       window.location.href = "./index.html";
       break;
     case ("top-logo-name"):
