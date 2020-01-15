@@ -40,10 +40,10 @@ let topSearchInput = document.getElementsByClassName("top-search-input")[0];
 function searchOperate() {
   let searchContent = topSearchInput.value;
   let searchMovieId = isContain(searchContent);
-  // alert(searchMovieId);
+  alert(searchMovieId);
   if (-1 === searchMovieId) {
     alert("mei");//检测方法，之后要跳转到404页面
-    window.locataion.href = "./index.html";
+    window.location.href = "./index.html";
   } else {
     alert(searchMovieId);//检测方法，之后要跳转到新的详情页面
     //设置一个最大全局变量 所有页面都包含这个参数，只有详情页读取详情内容用这个参数
@@ -51,20 +51,3 @@ function searchOperate() {
     window.location.href = "./movieDetails.html";
   }
 }
-
-header.addEventListener("click", function (event) {
-  let target = event.target;
-  switch (target.className) {
-    case ("top-logo-icon"):
-      // alert(movieDetailPageId);
-      // window.location.href = "./index.html";
-      break;
-    case ("top-logo-name"):
-      // window.location.href = "./index.html";
-      break;
-    case ("top-search-button"):
-      searchOperate();
-      break;
-  }
-})
-
