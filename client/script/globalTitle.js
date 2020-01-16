@@ -70,6 +70,9 @@ function isABitContain(searchContent) {
 let searchSuggest=document.getElementsByClassName("search-suggest")[0];
 let searchSuggestList=document.getElementsByClassName("search-suggest-list")[0];
 
+//为input框增加下拉框，内部显示之前得到的模糊数据
+//其中触发条件是点击input框
+//特别的，设置了下拉框格式，如果太长则用overflow，否则就按照个数限制长度
 topSearchInput.addEventListener("click", function(event){
   if(recommendSearchArray!==[]){
     searchSuggest.style.display = "block";
@@ -100,3 +103,13 @@ function addSuggestMovieItem(movieID) {
       <span class="suggest-item-rating">${suggestMovieData.rating.average}</span>
     </li>`
 }
+
+searchSuggest.addEventListener("click", function(event){
+  let target = event.target;
+  console.log(target);
+  if ("suggest-item" === target.className) {
+    window.location.href = "./movieDetails.html?id=" + target.id;
+  }  else {
+    window.location.href = "./movieDetails.html?id=" + target.parentNode.id;
+  }
+}) 

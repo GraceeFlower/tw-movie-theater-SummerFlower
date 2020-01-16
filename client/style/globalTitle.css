@@ -63,6 +63,7 @@
 
 .suggest-item{
   height:80px;
+  cursor: pointer;
 }
 
 .suggest-item .suggest-item-img{
@@ -70,9 +71,11 @@
   width: auto;
 }
 .suggest-item .suggest-item-name{
+  margin-left:5px;
   font-size: 16px;
 }
 .suggest-item .suggest-item-rating{
+  margin-left:5px;
   font-size: 14px;
   color: #f3ab3a;
 }

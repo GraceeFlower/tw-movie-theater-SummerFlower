@@ -18,15 +18,23 @@
     因为所有需求在详情页也要满足
   -->
     <header class="global-title">
+      <!--此处还需要加点回主页的方法 -->
       <div class="top-logo">
         <a href="./index.html"><img class="top-logo-icon" src="static/flower.png" /></a>
         <a href="./index.html" class="top-logo-name">SummerFlower</a>
       </div>
       <div class="top-search">
-        <input type="text" name="search-text" class="top-search-input" />
+        <!--此处不知道是不是需要表单，因为数据需要到数据库搜索
+      需要加一个div用于输入数据时显示可选选项。
+      -->
+        <input type="text" name="search-text" class="top-search-input" autocomplete="off"/>
+        <div class="search-suggest">
+          <ul class="search-suggest-list"></ul>
+        </div>
         <input type="button" name="search-button" class="top-search-button" value="Flower一下" onclick="searchOperate()" />
       </div>
       <div class="top-sign">
+        <!-- 此处没有后续页面，只留两个按钮 -->
         <input type="button" name="sign-up" value="注册" class="top-sign-button" />
         <input type="button" name="sign-in" value="登录" class="top-sign-button" />
       </div>
