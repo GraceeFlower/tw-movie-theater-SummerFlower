@@ -40,14 +40,10 @@ let topSearchInput = document.getElementsByClassName("top-search-input")[0];
 function searchOperate() {
   let searchContent = topSearchInput.value;
   let searchMovieId = isContain(searchContent);
-  alert(searchMovieId);
   if (-1 === searchMovieId) {
-    alert("mei");//检测方法，之后要跳转到404页面
-    window.location.href = "./index.html";
+    window.location.href = "./movieNotFound.html?searchContent=" + searchContent;
   } else {
-    alert(searchMovieId);//检测方法，之后要跳转到新的详情页面
-    //设置一个最大全局变量 所有页面都包含这个参数，只有详情页读取详情内容用这个参数
     movieDetailPageId = searchMovieId;
-    window.location.href = "./movieDetails.html?id="+movieDetailPageId;
+    window.location.href = "./movieDetails.html?id=" + movieDetailPageId;
   }
 }

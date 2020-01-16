@@ -1,4 +1,3 @@
-let BASIC_URL = 'http://127.0.0.1:8888';
 const movieMenu = document.getElementsByClassName('classification')[0];
 const movieList = document.getElementsByClassName('movie-list')[0];
 const pageInfo = document.getElementsByClassName('current-page')[0];
