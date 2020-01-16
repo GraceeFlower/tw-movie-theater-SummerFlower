@@ -3,8 +3,8 @@ const movieList = document.getElementsByClassName('movie-list')[0];
 const pageInfo = document.getElementsByClassName('current-page')[0];
 let [wholePage, currentPage] = [1, 1];
 
-const top250 = 'top250';
-let data;
+// const top250 = 'top250';
+// let data;
 let currentMovie;
 
 function loadItems() {
