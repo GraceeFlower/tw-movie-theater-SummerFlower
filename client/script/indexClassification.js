@@ -63,7 +63,7 @@ function separatePage(currentMovie) {
   } else {
     loadMovieList(currentMovie);
   }
-  reloadPage();
+  reloadPageBar();
 }
 
 const formerBtn = document.getElementById('former-page');
@@ -79,10 +79,10 @@ function changePage(isFormer) {
       separatePage(currentMovie);
     }
   }
-  reloadPage();
+  reloadPageBar();
 }
 
-function reloadPage() {
+function reloadPageBar() {
   pageInfo.innerHTML = `${currentPage}/${wholePage}`;
   formerBtn.innerHTML = 1 === currentPage ? '没有上一页了' : '上一页';
   latterBtn.innerHTML = wholePage === currentPage ? '没有下一页了' : '下一页';
