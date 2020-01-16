@@ -1,3 +1,50 @@
-.movie-title-and-date{
-  font-size: 26px;
+.detail-page-content {
+  padding: 30px 10%;
+}
+
+.detail-page-content h1 {
+  margin-bottom: 30px;
+  font-size: 23px;
+  font-weight: 300;
+}
+
+.movie-poster-and-detail {
+  display: flex;
+}
+
+.movie-poster {
+  padding: 10px 85px 10px 10px;
+}
+
+.movie-poster img {
+  width: 145px;
+}
+
+.movie-detail {
+  font-size: 14px;
+}
+
+.movie-detail div {
+  margin: 6px 0;
+}
+
+.movie-detail .detail-name {
+  font-weight: bold;
+}
+
+.movie-story-intro p{
+  font-size: 14px;
+  text-indent: 29px;
+}
+
+.detail-page-content .item-title {
+  display: inline-block;
+  padding: 0 10px;
+  height: 30px;
+  border-radius: 4px;
+  line-height: 30px;
+  font-size: 16px;
+  text-align: center;
+  background: #777;
+  color: #fff;
 }
