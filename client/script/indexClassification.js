@@ -2,14 +2,11 @@ const movieMenu = document.getElementsByClassName('classification')[0];
 const movieList = document.getElementsByClassName('movie-list')[0];
 const pageInfo = document.getElementsByClassName('current-page')[0];
 let [wholePage, currentPage] = [1, 1];
-
-// const top250 = 'top250';
-// let data;
 let currentMovie;
 
 function loadItems() {
   ajax({
-    url: BASIC_URL + '/v2/movie/' + top250 + '?start=0&count=10',
+    url: BASIC_URL + '/v2/movie/' + top250 + '?start=0&count=100',
     method: 'GET',
     success: function (responseText) {
       data = responseText.subjects;
@@ -58,17 +55,15 @@ function addMovieItem(movie) {
 }
 
 function separatePage(currentMovie) {
-  if (currentMovie.length > 14) {
+  if (currentMovie.length > 10) {
     movieList.innerHTML = '';
-    wholePage = Math.ceil(currentMovie.length / 14);
-    pageInfo.innerHTML = `${currentPage}/${wholePage}`;
-    formerBtn.innerHTML = 1 === currentPage ? '没有上一页了' : '上一页';
-    latterBtn.innerHTML = wholePage === currentPage ? '没有下一页了' : '下一页';
-    let pageList = currentMovie.slice((currentPage - 1) * 14, currentPage * 14);
+    wholePage = Math.ceil(currentMovie.length / 10);
+    let pageList = currentMovie.slice((currentPage - 1) * 10, currentPage * 10);
     loadMovieList(pageList);
   } else {
     loadMovieList(currentMovie);
   }
+  reloadPageBar();
 }
 
 const formerBtn = document.getElementById('former-page');
@@ -84,4 +79,11 @@ function changePage(isFormer) {
       separatePage(currentMovie);
     }
   }
+  reloadPageBar();
+}
+
+function reloadPageBar() {
+  pageInfo.innerHTML = `${currentPage}/${wholePage}`;
+  formerBtn.innerHTML = 1 === currentPage ? '没有上一页了' : '上一页';
+  latterBtn.innerHTML = wholePage === currentPage ? '没有下一页了' : '下一页';
 }
