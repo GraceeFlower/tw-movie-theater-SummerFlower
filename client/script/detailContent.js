@@ -58,7 +58,7 @@ function renderMovieDetail(movie) {
     </div>
     <div class="movie-reviews">
       <div class="item-title">豆瓣热评Top5</div>
-      ${renderComment(movie.popular_reviews)}
+      <div class="comment-list">${renderComment(movie.popular_reviews.slice(0, 5))}</div>
     </div>
   `
 } 
@@ -70,5 +70,11 @@ function composeName(nameArr) {
 }
 
 function renderComment(comment) {
-  
+  return comment.reduce((whole, item) => whole += `
+  <div class="commenter-info">
+    <img src="${item.author.avatar}" alt="${item.author.uid}" />
+    <span class="commenter-name">${item.author.name}</span>
+    <span class="comment-title">${item.title}</span>
+    <div class="comment-text">${item.summary}</div>
+  </div>`, '');
 }

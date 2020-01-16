@@ -48,3 +48,33 @@
   background: #777;
   color: #fff;
 }
+
+.comment-list {
+  margin: 20px 0;
+  width: 65%;
+}
+
+.commenter-info img {
+  height: 30px;
+}
+
+.commenter-name, .comment-title {
+  display: inline-block;
+  font-size: 13px;
+}
+
+.comment-title {
+  background: yellowgreen;
+  color: #fff;
+  padding: 4px 10px;
+  font-weight: bold;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 4px;
+  margin: 0 4px;
+}
+
+.comment-text {
+  font-size: 14px;
+  margin: 20px 0;
+}
