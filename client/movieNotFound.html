@@ -5,29 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/index.css" />
     <link rel="stylesheet" href="style/globalTitle.css" />
-    <link rel="stylesheet" href="style/indexContent.css" />
+    <link rel="stylesheet" href="style/movieNotFound.css" />
   </head>
   <body>
     <header class="global-title">
       <div class="top-logo">
-        <a href="./index.html"><img class="top-logo-icon" src="static/flower.png" /></a>
+        <a href="./index.html"
+          ><img class="top-logo-icon" src="static/flower.png"
+        /></a>
         <a href="./index.html" class="top-logo-name">SummerFlower</a>
       </div>
       <form action="" onsubmit="searchOperate()">
         <div class="top-search">
           <input type="text" name="search-text" class="top-search-input" />
-          <input type="submit" name="search-button" class="top-search-button" value="Flower一下" />
+          <input
+            type="submit"
+            name="search-button"
+            class="top-search-button"
+            value="Flower一下"
+          />
         </div>
         <div class="top-sign">
-          <input type="button" name="sign-up" value="注册" class="top-sign-button" />
-          <input type="button" name="sign-in" value="登录" class="top-sign-button" />
+          <input
+            type="button"
+            name="sign-up"
+            value="注册"
+            class="top-sign-button"
+          />
+          <input
+            type="button"
+            name="sign-in"
+            value="登录"
+            class="top-sign-button"
+          />
         </div>
       </form>
     </header>
     <div class="not-found-content">
-      <span class="not-found-img"></span>
+      <span class="not-found-img">
+        <img class="not-found-img" src="./static/404.png" />
+      </span>
       <div class="not-found-notice-text">
         <h1 class="search-what"></h1>
         <p class="what-not-found"></p>
