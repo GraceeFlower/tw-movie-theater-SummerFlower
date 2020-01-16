@@ -1,8 +1,4 @@
-let BASIC_URL = 'http://127.0.0.1:8888';
 const movieMenu = document.getElementsByClassName('classification')[0];
-
-const top250 = 'top250';
-let data;
 
 function loadItems() {
   ajax({
@@ -57,6 +53,6 @@ function addMovieItem(movie) {
 
 function separatePage() {
   if (movieList.children.length > 14) {
-    
+
   }
 }
