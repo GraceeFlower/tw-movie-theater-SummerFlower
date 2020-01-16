@@ -22,11 +22,15 @@
   cursor: pointer;
 }
 
+.movie-profile {
+  background-color: #eee;
+  font-size: 14px;
+}
+
 .movie-list {
   display: flex;
   flex-wrap: wrap;
   padding: 30px 10%;
-  background-color: #eee;
 }
 
 .movie-list li {
@@ -47,10 +51,24 @@
   height: 200px;
 }
 
-.movie-list {
-  font-size: 14px;
-}
-
 .movie-list .movie-average {
   color: #f3ab3a;
+}
+
+.movie-profile .view-more {
+  display: flex;
+  padding: 35px 10%;
+}
+
+.view-more .current-page {
+  flex: 1;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.view-more .change-page {
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
 }

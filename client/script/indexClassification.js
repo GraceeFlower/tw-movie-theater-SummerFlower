@@ -54,3 +54,9 @@ function addMovieItem(movie) {
       <span class="movie-average">${movie.rating.average}</span>
     </li>`
 }
+
+function separatePage() {
+  if (movieList.children.length > 14) {
+    
+  }
+}
