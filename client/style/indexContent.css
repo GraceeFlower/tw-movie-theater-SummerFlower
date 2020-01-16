@@ -19,6 +19,7 @@
 
 .classification span {
   margin: 5px 22px;
+  width: 50px;
   cursor: pointer;
 }
 
@@ -36,7 +37,7 @@
 .movie-list li {
   padding: 10px;
   box-shadow: 7px 11px 10px #aaa;
-  margin: 20px 25px;
+  margin: 20px 35px;
   cursor: pointer;
 }
 
