@@ -47,3 +47,22 @@ function searchOperate() {
     window.location.href = "./movieDetails.html?id=" + movieDetailPageId;
   }
 }
+
+//对于输入框的事件监听函数，可以得到包含该字符的所有电影的ID，并存入recommendSearchArray数组
+//调用了isABitContain函数，用于判断是否又包含目前内容为名字的电影，并返回数组
+topSearchInput.addEventListener("input", function(event){
+  let searchContent = event.target.value;
+  console.log(searchContent);
+  let recommendSearchArray = isABitContain(searchContent);
+  console.log(recommendSearchArray);
+})
+
+function isABitContain(searchContent) {
+  let containThisMovieArray = [];
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].title.indexOf(searchContent)>=0) {
+      containThisMovieArray.push(data[i].id);
+    }
+  }
+  return containThisMovieArray;
+}
