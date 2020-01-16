@@ -46,12 +46,20 @@ function loadMovieList(movie) {
 
 function addMovieItem(movie) {
   movieList.innerHTML += `
-    <li>
+    <li id='${movie.id}'>
       <div class="movie-cover"><image src='${movie.images.small}' alt='${movie.title}'/></div>
       <span class="movie-name">${movie.title}</span>
       <span class="movie-average">${movie.rating.average}</span>
     </li>`
 }
+
+movieList.addEventListener("click",function(event){
+  let target = event.target;
+  if("movie-cover"===target.parentNode.className){
+    target = target.parentNode;
+  }
+  window.location.href = "./movieDetails.html?id=" + target.parentNode.id;
+})
 
 function separatePage(currentMovie) {
   if (currentMovie.length > 10) {
@@ -89,3 +97,4 @@ function reloadPageBar() {
   formerBtn.innerHTML = 1 === currentPage ? '没有上一页了' : '上一页';
   latterBtn.innerHTML = wholePage === currentPage ? '没有下一页了' : '下一页';
 }
+
