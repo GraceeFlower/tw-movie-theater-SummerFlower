@@ -17,3 +17,26 @@ function loadItems() {
   })
 }
 loadItems();
+
+function loadMovieMenu(data) {
+  const movieClass = new Set(data.reduce((pre, cur) => pre.concat(cur.genres), []));
+  movieClass.forEach(item => {
+    movieMenu.innerHTML += `<span>${item}</span>`;
+  });
+  loadMovieList(data);
+}
+
+const movieList = document.getElementsByClassName('movie-list')[0];
+
+function loadMovieList(data) {
+  data.forEach((element) => addMovieItem(element));
+}
+
+function addMovieItem(movie) {
+  movieList.innerHTML += `
+    <li>
+      <div class="movie-cover"><image src='${movie.images.small}' alt='${movie.title}'/></div>
+      <span class="movie-name">${movie.title}</span>
+      <span class="movie-average">${movie.rating.average}</span>
+    </li>`
+}

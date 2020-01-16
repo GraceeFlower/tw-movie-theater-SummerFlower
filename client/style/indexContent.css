@@ -19,3 +19,36 @@
   margin-bottom: 5px;
   width: 11%;
 }
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px 10%;
+  background-color: #eee;
+}
+
+.movie-list li {
+  padding: 10px;
+  box-shadow: 7px 11px 10px #aaa;
+  margin: 20px 25px;
+  cursor: pointer;
+}
+
+.movie-list .movie-cover {
+  margin-bottom: 10px;
+  border: 6px solid #fff;
+  border-radius: 4px;
+}
+
+.movie-list .movie-cover, .movie-list img {
+  width: 135px;
+  height: 200px;
+}
+
+.movie-list {
+  font-size: 14px;
+}
+
+.movie-list .movie-average {
+  color: #f3ab3a;
+}
