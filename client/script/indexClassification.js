@@ -29,14 +29,15 @@ function loadMovieMenu(data) {
 movieMenu.addEventListener('click', renderChosenMovie, true);
 
 function renderChosenMovie(event) {
-  event.stopPropagation();
-  let type = event.target.innerHTML;
-  movieList.innerHTML = '';
-  data.forEach(item => {
-    if (item.genres.includes(type)) {
-      addMovieItem(item);
-    }
-  })
+  if (!event.target.className) {
+    let type = event.target.innerHTML;
+    movieList.innerHTML = '';
+    data.forEach(item => {
+      if ('全部' === type || item.genres.includes(type)) {
+        addMovieItem(item);
+      }
+    });
+  }
 }
 
 const movieList = document.getElementsByClassName('movie-list')[0];
