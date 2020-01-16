@@ -1,8 +1,12 @@
 let BASIC_URL = 'http://127.0.0.1:8888';
 const movieMenu = document.getElementsByClassName('classification')[0];
+const movieList = document.getElementsByClassName('movie-list')[0];
+const pageInfo = document.getElementsByClassName('current-page')[0];
+let [wholePage, currentPage] = [1, 1];
 
 const top250 = 'top250';
 let data;
+let currentMovie;
 
 function loadItems() {
   ajax({
@@ -29,21 +33,20 @@ function loadMovieMenu(data) {
 movieMenu.addEventListener('click', renderChosenMovie, true);
 
 function renderChosenMovie(event) {
+  [wholePage, currentPage] = [1, 1];
   if (!event.target.className) {
     let type = event.target.innerHTML;
     movieList.innerHTML = '';
+    currentMovie = [];
     data.forEach(item => {
-      if ('全部' === type || item.genres.includes(type)) {
-        addMovieItem(item);
-      }
+      if ('全部' === type || item.genres.includes(type)) {currentMovie.push(item);}
     });
+    separatePage(currentMovie);
   }
 }
 
-const movieList = document.getElementsByClassName('movie-list')[0];
-
-function loadMovieList(data) {
-  data.forEach((element) => addMovieItem(element));
+function loadMovieList(movie) {
+  movie.forEach((element) => addMovieItem(element));
 }
 
 function addMovieItem(movie) {
@@ -55,8 +58,31 @@ function addMovieItem(movie) {
     </li>`
 }
 
-function separatePage() {
-  if (movieList.children.length > 14) {
-    
+function separatePage(currentMovie) {
+  if (currentMovie.length > 14) {
+    movieList.innerHTML = '';
+    wholePage = Math.ceil(currentMovie.length / 14);
+    pageInfo.innerHTML = `${currentPage}/${wholePage}`;
+    formerBtn.innerHTML = 1 === currentPage ? '没有上一页了' : '上一页';
+    latterBtn.innerHTML = wholePage === currentPage ? '没有下一页了' : '下一页';
+    let pageList = currentMovie.slice((currentPage - 1) * 14, currentPage * 14);
+    loadMovieList(pageList);
+  } else {
+    loadMovieList(currentMovie);
+  }
+}
+
+const formerBtn = document.getElementById('former-page');
+const latterBtn = document.getElementById('latter-page');
+
+function changePage(isFormer) {
+  if (wholePage > 1) {
+    if (isFormer && currentPage > 1) {
+      currentPage--;
+      separatePage(currentMovie);
+    } else if (!isFormer && currentPage < wholePage) {
+      currentPage++;
+      separatePage(currentMovie);
+    }
   }
 }

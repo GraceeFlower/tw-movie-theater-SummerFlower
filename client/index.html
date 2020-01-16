@@ -44,9 +44,9 @@
     <div class="movie-profile">
       <ul class="movie-list"></ul>
       <div class="view-more">
-        <button class="change-page" onclick="separatePage(true)">没有上一页了</button>
+        <button id="former-page" class="change-page" onclick="changePage(true)">没有上一页了</button>
         <span class="current-page">1/1</span>
-        <button class="change-page" onclick="separatePage(false)">没有下一页了</button>
+        <button id="latter-page" class="change-page" onclick="changePage(false)">没有下一页了</button>
       </div>
     </div>
   </body>
