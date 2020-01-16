@@ -60,3 +60,19 @@
   z-index: 999;
   background-color: white;
 }
+
+.suggest-item{
+  height:80px;
+}
+
+.suggest-item .suggest-item-img{
+  height:75px;
+  width: auto;
+}
+.suggest-item .suggest-item-name{
+  font-size: 16px;
+}
+.suggest-item .suggest-item-rating{
+  font-size: 14px;
+  color: #f3ab3a;
+}

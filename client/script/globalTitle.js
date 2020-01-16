@@ -53,9 +53,7 @@ function searchOperate() {
 let recommendSearchArray = [];
 topSearchInput.addEventListener("input", function(event){
   let searchContent = event.target.value;
-  console.log(searchContent);
   recommendSearchArray = isABitContain(searchContent);
-  console.log(recommendSearchArray);
 })
 
 function isABitContain(searchContent) {
@@ -71,12 +69,18 @@ function isABitContain(searchContent) {
 
 let searchSuggest=document.getElementsByClassName("search-suggest")[0];
 let searchSuggestList=document.getElementsByClassName("search-suggest-list")[0];
+
 topSearchInput.addEventListener("click", function(event){
-  console.log(searchSuggest);
   if(recommendSearchArray!==[]){
     searchSuggest.style.display = "block";
+    searchSuggest.style.height = "auto";
+    searchSuggestList.innerHTML ="";
     for(let j=0;j<recommendSearchArray.length;j++){
       addSuggestMovieItem(recommendSearchArray[j]);
+    }
+    if(recommendSearchArray.length>5){
+      searchSuggest.style.height = "400px";
+      searchSuggest.style.overflow = "auto";
     }
   }
   
@@ -90,7 +94,7 @@ function addSuggestMovieItem(movieID) {
     }
   }
   searchSuggestList.innerHTML += `
-    <li class="suggest-item">
+    <li class="suggest-item" id='${suggestMovieData.id}'>
       <image class="suggest-item-img" src='${suggestMovieData.images.small}' >
       <span class="suggest-item-name">${suggestMovieData.title}</span>
       <span class="suggest-item-rating">${suggestMovieData.rating.average}</span>
