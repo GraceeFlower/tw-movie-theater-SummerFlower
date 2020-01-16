@@ -26,6 +26,19 @@ function loadMovieMenu(data) {
   loadMovieList(data);
 }
 
+movieMenu.addEventListener('click', renderChosenMovie, true);
+
+function renderChosenMovie(event) {
+  event.stopPropagation();
+  let type = event.target.innerHTML;
+  movieList.innerHTML = '';
+  data.forEach(item => {
+    if (item.genres.includes(type)) {
+      addMovieItem(item);
+    }
+  })
+}
+
 const movieList = document.getElementsByClassName('movie-list')[0];
 
 function loadMovieList(data) {

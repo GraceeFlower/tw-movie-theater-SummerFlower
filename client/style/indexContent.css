@@ -1,8 +1,11 @@
+.movie-menu {
+  font-size: 15px;
+}
+
 .movie-menu > header{
   padding-left: 5px;
   height: 35px;
   line-height: 35px;
-  font-size: 15px;
   background: #f5f5f5;
 }
 
@@ -12,12 +15,11 @@
   width: 80%;
   flex-wrap: wrap;
   text-align: center;
-  font-size: 16px;
 }
 
 .classification span {
-  margin-bottom: 5px;
-  width: 11%;
+  margin: 5px 22px;
+  cursor: pointer;
 }
 
 .movie-list {
