@@ -56,9 +56,12 @@ function addMovieItem(movie) {
 movieList.addEventListener("click",function(event){
   let target = event.target;
   if("movie-cover"===target.parentNode.className){
-    target = target.parentNode;
+    window.location.href = "./movieDetails.html?id=" + target.parentNode.parentNode.id;
+  }else if("movie-list"===target.parentNode.className){
+    window.location.href = "./movieDetails.html?id=" + target.id;
+  }else{
+    window.location.href = "./movieDetails.html?id=" + target.parentNode.id;
   }
-  window.location.href = "./movieDetails.html?id=" + target.parentNode.id;
 })
 
 function separatePage(currentMovie) {
