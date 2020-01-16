@@ -34,7 +34,7 @@ function renderChosenMovie(event) {
     movieList.innerHTML = '';
     currentMovie = [];
     data.forEach(item => {
-      if ('全部' === type || item.genres.includes(type)) {currentMovie.push(item);}
+      if ('全部' === type || item.genres.includes(type)) { currentMovie.push(item); }
     });
     separatePage(currentMovie);
   }
@@ -53,13 +53,13 @@ function addMovieItem(movie) {
     </li>`
 }
 
-movieList.addEventListener("click",function(event){
+movieList.addEventListener("click", function (event) {
   let target = event.target;
-  if("movie-cover"===target.parentNode.className){
+  if ("movie-cover" === target.parentNode.className) {
     window.location.href = "./movieDetails.html?id=" + target.parentNode.parentNode.id;
-  }else if("movie-list"===target.parentNode.className){
+  } else if ("movie-list" === target.parentNode.className) {
     window.location.href = "./movieDetails.html?id=" + target.id;
-  }else{
+  } else {
     window.location.href = "./movieDetails.html?id=" + target.parentNode.id;
   }
 })

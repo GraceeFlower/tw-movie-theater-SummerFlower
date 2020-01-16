@@ -49,3 +49,14 @@
   border-radius: 4px;
   background-color: white;
 }
+
+.search-suggest{
+  /* display: block; */
+  display: none;
+  position: absolute;
+  margin:0;
+  height:auto;
+  width: 40%;
+  z-index: 999;
+  background-color: white;
+}

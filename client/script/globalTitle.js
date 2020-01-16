@@ -50,10 +50,11 @@ function searchOperate() {
 
 //对于输入框的事件监听函数，可以得到包含该字符的所有电影的ID，并存入recommendSearchArray数组
 //调用了isABitContain函数，用于判断是否又包含目前内容为名字的电影，并返回数组
+let recommendSearchArray = [];
 topSearchInput.addEventListener("input", function(event){
   let searchContent = event.target.value;
   console.log(searchContent);
-  let recommendSearchArray = isABitContain(searchContent);
+  recommendSearchArray = isABitContain(searchContent);
   console.log(recommendSearchArray);
 })
 
@@ -65,4 +66,33 @@ function isABitContain(searchContent) {
     }
   }
   return containThisMovieArray;
+}
+
+
+let searchSuggest=document.getElementsByClassName("search-suggest")[0];
+let searchSuggestList=document.getElementsByClassName("search-suggest-list")[0];
+topSearchInput.addEventListener("click", function(event){
+  console.log(searchSuggest);
+  if(recommendSearchArray!==[]){
+    searchSuggest.style.display = "block";
+    for(let j=0;j<recommendSearchArray.length;j++){
+      addSuggestMovieItem(recommendSearchArray[j]);
+    }
+  }
+  
+})
+
+function addSuggestMovieItem(movieID) {
+  let suggestMovieData={};
+  for (let i = 0; i < data.length; i++) {
+    if (movieID === data[i].id) {
+      suggestMovieData=data[i];
+    }
+  }
+  searchSuggestList.innerHTML += `
+    <li class="suggest-item">
+      <image class="suggest-item-img" src='${suggestMovieData.images.small}' >
+      <span class="suggest-item-name">${suggestMovieData.title}</span>
+      <span class="suggest-item-rating">${suggestMovieData.rating.average}</span>
+    </li>`
 }
