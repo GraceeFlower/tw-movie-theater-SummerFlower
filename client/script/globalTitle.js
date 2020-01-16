@@ -50,7 +50,7 @@ function searchOperate() {
     alert(searchMovieId);//检测方法，之后要跳转到新的详情页面
     //设置一个最大全局变量 所有页面都包含这个参数，只有详情页读取详情内容用这个参数
     movieDetailPageId = searchMovieId;
-    window.location.href = "./movieDetails.html";
+    window.location.href = "./movieDetails.html?id="+movieDetailPageId;
   }
 }
 
