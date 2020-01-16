@@ -18,8 +18,8 @@
 }
 
 .classification span {
-  margin: 5px 22px;
-  width: 50px;
+  margin: 5px 20px;
+  width: 60px;
   cursor: pointer;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .movie-profile .view-more {
-  display: flex;
+  display: none;
   padding: 35px 10%;
 }
 

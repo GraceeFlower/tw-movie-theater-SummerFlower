@@ -11,8 +11,6 @@ function loadItems() {
     success: function (responseText) {
       data = responseText.subjects;
       loadMovieMenu(data);
-      console.log(data[0].title);//试验data数据格式
-      console.log(data[1]);
     }
   })
 }
@@ -23,7 +21,8 @@ function loadMovieMenu(data) {
   movieClass.forEach(item => {
     movieMenu.innerHTML += `<span>${item}</span>`;
   });
-  loadMovieList(data);
+  let randomList = Math.floor(Math.random() * (data.length - 10));
+  loadMovieList(data.slice(randomList, randomList + 10));
 }
 
 movieMenu.addEventListener('click', renderChosenMovie, true);
@@ -82,7 +81,10 @@ function changePage(isFormer) {
   reloadPageBar();
 }
 
+const viewMore = document.getElementsByClassName('view-more')[0];
+
 function reloadPageBar() {
+  viewMore.style.display = 'flex';
   pageInfo.innerHTML = `${currentPage}/${wholePage}`;
   formerBtn.innerHTML = 1 === currentPage ? '没有上一页了' : '上一页';
   latterBtn.innerHTML = wholePage === currentPage ? '没有下一页了' : '下一页';
