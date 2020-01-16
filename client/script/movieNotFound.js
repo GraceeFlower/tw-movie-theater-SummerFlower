@@ -1,8 +1,8 @@
 let thisURL = document.URL;
 let getIdFromURL = thisURL.split("?")[1];
 let nowSearchContent = getIdFromURL.split("=")[1];
+nowSearchContent = decodeURI(decodeURI(nowSearchContent));
 
-// let topSearchInput = document.getElementsByClassName("top-search-input")[0];
 let searchWhat = document.getElementsByClassName("search-what")[0];
 let whatNotFound = document.getElementsByClassName("what-not-found")[0];
 

@@ -12,36 +12,17 @@
   <body>
     <header class="global-title">
       <div class="top-logo">
-        <a href="./index.html"
-          ><img class="top-logo-icon" src="static/flower.png"
-        /></a>
+        <a href="./index.html"><img class="top-logo-icon" src="static/flower.png" /></a>
         <a href="./index.html" class="top-logo-name">SummerFlower</a>
       </div>
-      <form action="" onsubmit="searchOperate()">
-        <div class="top-search">
-          <input type="text" name="search-text" class="top-search-input" />
-          <input
-            type="submit"
-            name="search-button"
-            class="top-search-button"
-            value="Flower一下"
-          />
-        </div>
-        <div class="top-sign">
-          <input
-            type="button"
-            name="sign-up"
-            value="注册"
-            class="top-sign-button"
-          />
-          <input
-            type="button"
-            name="sign-in"
-            value="登录"
-            class="top-sign-button"
-          />
-        </div>
-      </form>
+      <div class="top-search">
+        <input type="text" name="search-text" class="top-search-input" />
+        <input type="button" name="search-button" class="top-search-button" value="Flower一下" onclick="searchOperate()" />
+      </div>
+      <div class="top-sign">
+        <input type="button" name="sign-up" value="注册" class="top-sign-button" />
+        <input type="button" name="sign-in" value="登录" class="top-sign-button" />
+      </div>
     </header>
     <div class="not-found-content">
       <span class="not-found-img">
