@@ -21,15 +21,9 @@
   cursor: pointer;
 }
 
-.global-title form {
-  flex: 1;
-  margin-top: 9px;
-}
-
 .top-search {
-  display: inline-block;
-  position: absolute;
-  width: 60%;
+  flex: 1;
+  line-height: 45px;
 }
 
 .top-search-input {
@@ -47,9 +41,7 @@
 }
 
 .top-sign {
-  position: relative;
-  float: right;
-  line-height: 26px;
+  line-height: 45px;
 }
 
 .top-sign .top-sign-button {
