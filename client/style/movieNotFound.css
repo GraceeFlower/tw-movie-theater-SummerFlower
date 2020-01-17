@@ -2,7 +2,14 @@
   margin: 20px auto;
   width: 80%;
 }
+
 .not-found-notice-text {
   display: inline-block;
   margin-left: 30px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
