@@ -17,3 +17,13 @@ ul {
 h1 {
   margin: 0;
 }
+
+footer {
+  height: 45px;
+  background-color: #000;
+  color: #fff;
+  line-height: 45px;
+  font-size: 15px;
+  text-align: center;
+  font-family: sans-serif;
+}
