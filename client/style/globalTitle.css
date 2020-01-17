@@ -82,7 +82,7 @@
 }
 
 .suggest-item:hover .suggest-item-name {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .suggest-item img{
@@ -92,7 +92,7 @@
 
 .suggest-item .suggest-item-name{
   margin-left: 20px;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .suggest-item .suggest-item-rating{
