@@ -1,7 +1,7 @@
 .global-title {
   display: flex;
   padding: 5px 8px;
-  height: 50px;
+  height: 45px;
   background-color: #000;
 }
 
@@ -33,7 +33,6 @@
   width: 50%;
 }
 
-/*在这在这在这！聚焦输入框！！！！*/
 .top-search-input:focus + .search-suggest{
   display: block;
 }
@@ -62,7 +61,6 @@
 }
 
 .search-suggest{
-  /* display: block; */
   display: none;
   position: absolute;
   margin:0;
