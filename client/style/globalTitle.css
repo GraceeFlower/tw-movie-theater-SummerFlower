@@ -33,6 +33,11 @@
   width: 50%;
 }
 
+/*在这在这在这！聚焦输入框！！！！*/
+.top-search-input:focus + .search-suggest{
+  display: block;
+}
+
 .top-search-button {
   height: 26px;
   margin-left: 5px;
