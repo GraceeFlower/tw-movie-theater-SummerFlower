@@ -1,8 +1,21 @@
 let header = document.getElementsByTagName("header")[0];
 let BASIC_URL = 'http://127.0.0.1:8888';
 
-//设置一个最大全局变量 所有页面都包含这个参数，只有详情页读取详情内容用这个参数
-window.movieDetailPageId;
+let thisURL = document.URL;
+let getIdFromURL = thisURL.split("?")[1];
+let movieDetailPageId = getIdFromURL.split("=")[1];
+let movieDetailData;
+ajax({
+  url: BASIC_URL + '/v2/movie/subject/' + movieDetailPageId,
+  method: 'GET',
+  success: function (responseText) {
+    movieDetailData = responseText;
+    // console.log(movieDetailData);//试验data数据格式
+    // console.log(getMainActor(movieDetailData.casts));
+    // console.log(getMovieStyle(movieDetailData.genres));
+    renderMovieDetail(responseText);
+  }
+})
 
 const top250 = 'top250';
 let data;
@@ -15,10 +28,21 @@ function loadItems() {
       data = responseText.subjects;
       console.log(data[0].title);//试验data数据格式
       console.log(data[1]);
+      findSimilarArray()
+      console.log(relatedMovie);
     }
   })
 }
 loadItems();
+
+let relatedMovie = [];
+function findSimilarArray(){
+  const nowMovieGenres = movieDetailData.genres;
+    let type = nowMovieGenres[0];
+    data.forEach(item => {
+      if (item.genres.includes(type)&&item.id!==movieDetailPageId) { relatedMovie.push(item); }
+    });
+}
 
 //isContain函数用于查找搜索框所写电影名是否在top250的前100的影片库内
 //其中searchContent是传入参数，代表传入搜索框内容
@@ -113,3 +137,4 @@ searchSuggest.addEventListener("click", function(event){
     window.location.href = "./movieDetails.html?id=" + target.parentNode.id;
   }
 }) 
+
