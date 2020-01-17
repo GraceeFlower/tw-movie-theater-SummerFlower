@@ -15,6 +15,7 @@ function renderMovieDetail(movie) {
         <div><span class="detail-name">上映时间：</span><span class="detail-text">${movie.pubdates.join(',')}</div>
         <div><span class="detail-name">豆瓣评分：</span><span class="detail-text">${judgeAverage(movie.rating.average)}</div>
       </div>
+      <div class="movie-video"><h5>电影路径</h5><ul>${renderMovieVideo(movie.videos)}</ul></div>
     </div>
     <div class="movie-story-intro">
       <div class="item-title">剧情介绍</div>
@@ -31,6 +32,15 @@ function composeName(nameArr) {
   let res = [];
   nameArr.forEach(item => res.push(item.name));
   return res.join(',');
+}
+
+function renderMovieVideo(video) {
+  return video.reduce((whole, item) => whole += 
+    `<li>
+      <a href="${item.sample_link}">${item.source.name}</a>
+      <span class="${item.need_pay ? 'paying-movie' : 'free-movie'}">${item.need_pay ? '¥付费' : '免费'}</span>
+    </li>`
+  , '');
 }
 
 function renderComment(comment) {

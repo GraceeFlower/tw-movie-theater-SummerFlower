@@ -32,7 +32,45 @@
   font-weight: bold;
 }
 
-.movie-story-intro p{
+.movie-video {
+  display: inline-table;
+  margin-left: 15%;
+  padding: 16px;
+  width: 25%;
+  font-size: 14px;
+  border-radius: 7px;
+}
+
+.movie-video h5 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: lightslategrey;
+  border-bottom: 1px solid;
+}
+
+.movie-video li {
+  display: flex;
+  margin-bottom: 5px;
+  justify-content: space-between;
+}
+
+.movie-video a {
+  color: dimgray;
+}
+
+.movie-video a:hover {
+  font-weight: bold;
+}
+
+.movie-video .paying-movie {
+  color: darkgoldenrod;
+}
+
+.movie-video .free-movie {
+  color: yellowgreen;
+}
+
+.movie-story-intro p {
   font-size: 14px;
   text-indent: 29px;
 }
