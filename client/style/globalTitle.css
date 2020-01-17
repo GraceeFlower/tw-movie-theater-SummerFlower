@@ -38,6 +38,10 @@
   display: block;
 }
 
+.search-suggest:hover {
+  display: block;
+}
+
 .top-search-button {
   height: 26px;
   margin-left: 5px;
