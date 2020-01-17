@@ -56,9 +56,15 @@ function renderComment(comment) {
 const similarMovie = document.getElementsByClassName('similar-movie-recommend')[0];
 
 function renderSimilarMovie() {
-  similarMovie.innerHTML = `<div class="item-title">相似电影</div><ul class="similar-movie-list"></ul>`;
   const similarList = document.getElementsByClassName('similar-movie-list')[0];
-  similarList.innerHTML = relatedMovie.slice(0, 12).reduce((pre, cur) => pre +=
+  let randomSimilarIndex;
+  similarMovie.innerHTML = `<div class="item-title">相似电影</div><ul class="similar-movie-list"></ul>`;
+  if(relatedMovie.length>12){
+    randomSimilarIndex = Math.floor(Math.random()*(relatedMovie.length-12));
+  }else{
+    randomSimilarIndex=0;
+  }
+  similarList.innerHTML = relatedMovie.slice(randomSimilarIndex,randomSimilarIndex+12).reduce((pre, cur) => pre +=
     `<li id='${cur.id}'>
       <div class="similar-movie-cover"><img src='${cur.images.small}' alt='${cur.title}'/></div>
       <div class="similar-movie-name">${cur.title}</div>
