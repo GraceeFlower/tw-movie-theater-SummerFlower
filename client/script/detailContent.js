@@ -76,4 +76,17 @@ function renderSimilarMovie() {
       <div class="similar-movie-average">${cur.rating.average}</div>
     </li>`
   , '');
+
+  similarList.addEventListener("click", function (event) {
+    let target = event.target;
+    console.log(target);
+    console.log(target.parentNode);
+    if ('similar-movie-list' !== target.className) {
+      if ("similar-movie-cover" === target.parentNode.className) {
+        window.location.href = "./movieDetails.html?id=" + target.parentNode.parentNode.id;
+      } else if ("similar-movie-list" === target.parentNode.parentNode.className) {
+        window.location.href = "./movieDetails.html?id=" + target.parentNode.id;
+      }
+    }
+  })
 }
