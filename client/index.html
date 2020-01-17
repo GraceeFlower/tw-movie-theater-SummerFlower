@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Index</title>
 
     <link href="https://fonts.font.im/css?family=Satisfy" rel="stylesheet">
     <link rel="stylesheet" href="style/index.css">
@@ -12,17 +12,12 @@
     <link rel="stylesheet" href="style/indexContent.css" />
   </head>
   <body>
-    <!-- header包含图标，名字，搜索栏，确认按钮，注册登录按钮-->
     <header class="global-title">
-        <!--此处还需要加点回主页的方法 -->
         <div class="top-logo">
           <a href="./index.html"><img class="top-logo-icon" src="static/flower.png" /></a>
           <a href="./index.html" class="top-logo-name">SummerFlower</a>
         </div>
         <div class="top-search">
-          <!--此处不知道是不是需要表单，因为数据需要到数据库搜索
-        需要加一个div用于输入数据时显示可选选项。
-        -->
           <input type="text" name="search-text" class="top-search-input" autocomplete="off"/>
           <div class="search-suggest">
             <ul class="search-suggest-list"></ul>
@@ -30,7 +25,6 @@
           <input type="button" name="search-button" class="top-search-button" value="Flower一下" onclick="searchOperate()" />
         </div>
         <div class="top-sign">
-          <!-- 此处没有后续页面，只留两个按钮 -->
           <input type="button" name="sign-up" value="注册" class="top-sign-button" />
           <input type="button" name="sign-in" value="登录" class="top-sign-button" />
         </div>
@@ -39,10 +33,6 @@
       <header>电影分类</header>
       <div class="classification"></div>
     </div>
-    <!-- 电影展示部分：一个DIV  -->
-    <!-- 电影分类：一个DIV
-      分类下是种类名，每个种类绑定一份列表
-      列表展示该种类的信息 -->
     <div class="movie-profile">
       <ul class="movie-list"></ul>
       <div class="view-more">
