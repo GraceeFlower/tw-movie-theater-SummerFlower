@@ -67,11 +67,11 @@
 .comment-title {
   background: yellowgreen;
   color: #fff;
-  padding: 4px 5px;
+  padding: 4px 6px;
+  font-size: 12px;
   font-weight: bold;
-  height: 20px;
-  line-height: 20px;
-  border-radius: 4px;
+  line-height: 18px;
+  border-radius: 5px;
   margin: 0 4px;
 }
 
@@ -86,7 +86,7 @@
 
 .similar-movie-list {
   display: flex;
-  padding: 2%;
+  padding: 2% 0;
   justify-content: center;
   flex-wrap: wrap;
 }

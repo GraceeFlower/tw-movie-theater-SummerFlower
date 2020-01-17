@@ -59,7 +59,7 @@ function renderComment(comment) {
   <div class="commenter-info">
     <img src="${item.author.avatar}" alt="${item.author.uid}" />
     <span class="commenter-name">${item.author.name}</span>
-    <span class="comment-title">${item.title}</span>
+    <span class="comment-title">#${item.title}#</span>
     <div class="comment-text">${item.summary}</div>
   </div>`, '');
 }
