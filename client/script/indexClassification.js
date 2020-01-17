@@ -47,7 +47,7 @@ function loadMovieList(movie) {
 function addMovieItem(movie) {
   movieList.innerHTML += `
     <li id='${movie.id}'>
-      <div class="movie-cover"><image src='${movie.images.small}' alt='${movie.title}'/></div>
+      <div class="movie-cover"><img src='${movie.images.small}' alt='${movie.title}'/></div>
       <span class="movie-name">${movie.title}</span>
       <span class="movie-average">${movie.rating.average}</span>
     </li>`
@@ -55,12 +55,14 @@ function addMovieItem(movie) {
 
 movieList.addEventListener("click", function (event) {
   let target = event.target;
-  if ("movie-cover" === target.parentNode.className) {
-    window.location.href = "./movieDetails.html?id=" + target.parentNode.parentNode.id;
-  } else if ("movie-list" === target.parentNode.className) {
-    window.location.href = "./movieDetails.html?id=" + target.id;
-  } else {
-    window.location.href = "./movieDetails.html?id=" + target.parentNode.id;
+  if ('movie-list' !== target.className) {
+    if ("movie-cover" === target.parentNode.className) {
+      window.location.href = "./movieDetails.html?id=" + target.parentNode.parentNode.id;
+    } else if ("movie-list" === target.parentNode.className) {
+      window.location.href = "./movieDetails.html?id=" + target.id;
+    } else {
+      window.location.href = "./movieDetails.html?id=" + target.parentNode.id;
+    }
   }
 })
 
