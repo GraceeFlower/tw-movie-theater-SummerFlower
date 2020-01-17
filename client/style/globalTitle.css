@@ -72,7 +72,7 @@
 
 .suggest-item{
   display: flex;
-  height:95px;
+  height: 95px;
   line-height: 95px;
   cursor: pointer;
 }
