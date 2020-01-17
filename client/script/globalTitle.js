@@ -48,9 +48,9 @@ topSearchInput.addEventListener("input", function (event) {
 
 function isABitContain(searchContent) {
   let containThisMovieArray = [];
-  if(searchContent){
+  if (searchContent) {
     for (let i = 0; i < data.length; i++) {
-      if (data[i].title.indexOf(searchContent)>=0) {
+      if (data[i].title.indexOf(searchContent) >= 0) {
         containThisMovieArray.push(data[i].id);
       }
     }
@@ -58,17 +58,15 @@ function isABitContain(searchContent) {
   return containThisMovieArray;
 }
 
-function setSuggestMoviePullDown(){
-  if (recommendSearchArray.length){
-    searchSuggest.style.height = "auto";
-    searchSuggestList.innerHTML = "";
-    for (let j=0; j<recommendSearchArray.length; j++){
-      addSuggestMovieItem(recommendSearchArray[j]);
-    }
-    if(recommendSearchArray.length>5){
-      searchSuggest.style.height = "400px";
-      searchSuggest.style.overflow = "auto";
-    }
+function setSuggestMoviePullDown() {
+  searchSuggest.style.height = "auto";
+  searchSuggestList.innerHTML = "";
+  for (let j = 0; j < recommendSearchArray.length; j++) {
+    addSuggestMovieItem(recommendSearchArray[j]);
+  }
+  if (recommendSearchArray.length > 5) {
+    searchSuggest.style.height = "400px";
+    searchSuggest.style.overflow = "auto";
   }
 }
 
