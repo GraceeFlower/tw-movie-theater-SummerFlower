@@ -62,7 +62,7 @@ function renderSimilarMovie() {
     `<li id='${cur.id}'>
       <div class="similar-movie-cover"><img src='${cur.images.small}' alt='${cur.title}'/></div>
       <div class="similar-movie-name">${cur.title}</div>
-      <div class="similar-movie-average">${cur.rating.average}</div>
+      <div class="similar-movie-average">${judgeAverage(cur.rating.average)}</div>
     </li>`
   , '');
 
