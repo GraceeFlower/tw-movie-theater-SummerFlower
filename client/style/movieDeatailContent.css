@@ -37,15 +37,15 @@
   margin-left: 15%;
   padding: 16px;
   width: 25%;
-  font-size: 14px;
   border-radius: 7px;
+  font-size: 14px;
 }
 
 .movie-video h5 {
   margin-bottom: 10px;
-  font-size: 18px;
-  color: lightslategrey;
   border-bottom: 1px solid;
+  color: lightslategrey;
+  font-size: 18px;
 }
 
 .movie-video li {
@@ -142,5 +142,5 @@
 
 .similar-movie-average {
   font-weight: bold;
-  color: #2474b5;
+  color: #93b5cf;
 }
