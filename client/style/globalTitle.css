@@ -1,6 +1,6 @@
 .global-title {
   display: flex;
-  padding: 5px;
+  padding: 5px 8px;
   height: 50px;
   background-color: #000;
 }
@@ -17,7 +17,9 @@
 
 .top-logo > a {
   vertical-align: middle;
-  color: pink;
+  font-family: 'Satisfy', cursive, sans-serif;
+  font-size: 22px;
+  color:  #f1c4cd;
   cursor: pointer;
 }
 
