@@ -145,7 +145,7 @@ function addSuggestMovieItem(movieID) {
     <li class="suggest-item" id='${suggestMovieData.id}'>
       <image class="suggest-item-img" src='${suggestMovieData.images.small}' >
       <span class="suggest-item-name">${suggestMovieData.title}</span>
-      <span class="suggest-item-rating">${suggestMovieData.rating.average}</span>
+      <span class="suggest-item-rating">${judgeAverage(suggestMovieData.rating.average)}</span>
     </li>`
 }
 
@@ -158,3 +158,7 @@ searchSuggest.addEventListener("click", function(event){
     window.location.href = "./movieDetails.html?id=" + target.parentNode.id;
   }
 }) 
+
+function judgeAverage(average) {
+  return average.toString().length === 1 ? `${average}.0` : average;
+}

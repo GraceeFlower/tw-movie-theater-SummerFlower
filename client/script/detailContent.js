@@ -13,7 +13,7 @@ function renderMovieDetail(movie) {
         <div><span class="detail-name">语言：</span><span class="detail-text">${movie.languages.join(',')}</div>
         <div><span class="detail-name">片长：</span><span class="detail-text">${movie.durations.join(',')}</div>
         <div><span class="detail-name">上映时间：</span><span class="detail-text">${movie.pubdates.join(',')}</div>
-        <div><span class="detail-name">豆瓣评分：</span><span class="detail-text">${movie.rating.average}</div>
+        <div><span class="detail-name">豆瓣评分：</span><span class="detail-text">${judgeAverage(movie.rating.average)}</div>
       </div>
     </div>
     <div class="movie-story-intro">
