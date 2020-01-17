@@ -17,10 +17,9 @@ function loadItems() {
 loadItems();
 
 function loadMovieMenu(data) {
-  const movieClass = new Set(data.reduce((pre, cur) => pre.concat(cur.genres), []));
-  movieClass.forEach(item => {
-    movieMenu.innerHTML += `<span>${item}</span>`;
-  });
+  const movieClass = [...new Set(data.reduce((pre, cur) => pre.concat(cur.genres), []))];
+  movieMenu.innerHTML = movieClass.reduce((allType, item) => 
+    allType += `<span>${item}</span>`,`<span>全部</span>`);
   let randomList = Math.floor(Math.random() * (data.length - 10));
   loadMovieList(data.slice(randomList, randomList + 10));
 }
