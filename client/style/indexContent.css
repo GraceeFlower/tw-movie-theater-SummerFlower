@@ -23,6 +23,10 @@
   cursor: pointer;
 }
 
+.classification span:hover {
+  color: #ec8aa4;
+}
+
 .movie-profile {
   background-color: #eee;
   font-size: 14px;
