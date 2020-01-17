@@ -118,7 +118,7 @@ function addSuggestMovieItem(movieID) {
   }
   searchSuggestList.innerHTML += `
     <li class="suggest-item" id='${suggestMovieData.id}'>
-      <image class="suggest-item-img" src='${suggestMovieData.images.small}' >
+      <div class="suggest-item-img"><img src='${suggestMovieData.images.small}' /></div>
       <span class="suggest-item-name">${suggestMovieData.title}</span>
       <span class="suggest-item-rating">${suggestMovieData.rating.average}</span>
     </li>`

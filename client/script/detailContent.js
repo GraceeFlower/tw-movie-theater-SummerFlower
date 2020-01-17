@@ -1,24 +1,3 @@
-
-let movieTitleAndDate = document.getElementsByClassName("movie-title-and-date")[0];
-let moviePoster = document.getElementsByClassName("movie-poster")[0];
-let movieDetail = document.getElementsByClassName("movie-detail")[0];
-let movieWatchLink = document.getElementsByClassName("movie-watch-link")[0];
-let movieStoryIntro = document.getElementsByClassName("movie-story-intro")[0];
-let movieReviews = document.getElementsByClassName("movie-reviews")[0];
-
-// //需要的信息在数组内的一个元素的一个属性中[{a:1},{},{},{}]
-// function getPeopleDetail(peopleList){
-//   let returnContent=""
-//   for(let i =0;i<peopleList.length;i++){
-//     returnContent = returnActor+peopleList[i].name+",";
-//   }
-//   return returnContent.slice(0,-1);
-// }
-// //如果需要的信息直接在数组内的取出方法[a,b,c,d]
-// function getNotpeopleDetail(notPeopleList){
-//   return notPeopleList.join(",");
-// }
-
 const detailPage = document.getElementsByClassName('detail-page-content')[0];
 
 function renderMovieDetail(movie) {

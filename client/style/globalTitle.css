@@ -73,20 +73,32 @@
 }
 
 .suggest-item{
-  height:80px;
+  display: flex;
+  height:95px;
+  line-height: 95px;
   cursor: pointer;
 }
 
-.suggest-item .suggest-item-img{
-  height:75px;
-  width: auto;
+.suggest-item:hover {
+  background-color: #eee;
 }
+
+.suggest-item:hover .suggest-item-name {
+  font-size: 18px;
+}
+
+.suggest-item img{
+  height: 100%;
+  width: 74px;
+}
+
 .suggest-item .suggest-item-name{
-  margin-left:5px;
+  margin-left: 20px;
   font-size: 16px;
 }
+
 .suggest-item .suggest-item-rating{
-  margin-left:5px;
+  margin-left: 9px;
   font-size: 14px;
   color: #f3ab3a;
 }
