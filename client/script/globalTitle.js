@@ -51,31 +51,52 @@ function searchOperate() {
 //对于输入框的事件监听函数，可以得到包含该字符的所有电影的ID，并存入recommendSearchArray数组
 //调用了isABitContain函数，用于判断是否又包含目前内容为名字的电影，并返回数组
 let recommendSearchArray = [];
+let searchSuggest=document.getElementsByClassName("search-suggest")[0];
+let searchSuggestList=document.getElementsByClassName("search-suggest-list")[0];
+
 topSearchInput.addEventListener("input", function(event){
   let searchContent = event.target.value;
   recommendSearchArray = isABitContain(searchContent);
+  setSuggestMoviePullDown();
 })
 
 function isABitContain(searchContent) {
   let containThisMovieArray = [];
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].title.indexOf(searchContent)>=0) {
-      containThisMovieArray.push(data[i].id);
+  if(''!==searchContent){
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].title.indexOf(searchContent)>=0) {
+        containThisMovieArray.push(data[i].id);
+      }
     }
   }
   return containThisMovieArray;
 }
 
 
-let searchSuggest=document.getElementsByClassName("search-suggest")[0];
-let searchSuggestList=document.getElementsByClassName("search-suggest-list")[0];
+// let searchSuggest=document.getElementsByClassName("search-suggest")[0];
+// let searchSuggestList=document.getElementsByClassName("search-suggest-list")[0];
 
 //为input框增加下拉框，内部显示之前得到的模糊数据
 //其中触发条件是点击input框
 //特别的，设置了下拉框格式，如果太长则用overflow，否则就按照个数限制长度
-topSearchInput.addEventListener("click", function(event){
+// topSearchInput.addEventListener("click", function(event){
+//   if(recommendSearchArray!==[]){
+//     searchSuggest.style.display = "block";
+//     searchSuggest.style.height = "auto";
+//     searchSuggestList.innerHTML ="";
+//     for(let j=0;j<recommendSearchArray.length;j++){
+//       addSuggestMovieItem(recommendSearchArray[j]);
+//     }
+//     if(recommendSearchArray.length>5){
+//       searchSuggest.style.height = "400px";
+//       searchSuggest.style.overflow = "auto";
+//     }
+//   }
+  
+// })
+
+function setSuggestMoviePullDown(){
   if(recommendSearchArray!==[]){
-    searchSuggest.style.display = "block";
     searchSuggest.style.height = "auto";
     searchSuggestList.innerHTML ="";
     for(let j=0;j<recommendSearchArray.length;j++){
@@ -86,8 +107,7 @@ topSearchInput.addEventListener("click", function(event){
       searchSuggest.style.overflow = "auto";
     }
   }
-  
-})
+}
 
 function addSuggestMovieItem(movieID) {
   let suggestMovieData={};
