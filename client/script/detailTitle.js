@@ -85,16 +85,14 @@ function isABitContain(searchContent) {
 }
 
 function setSuggestMoviePullDown(){
-  if (recommendSearchArray.length){
-    searchSuggest.style.height = "auto";
-    searchSuggestList.innerHTML ="";
-    for (let j=0;j<recommendSearchArray.length;j++){
-      addSuggestMovieItem(recommendSearchArray[j]);
-    }
-    if (recommendSearchArray.length>5){
-      searchSuggest.style.height = "400px";
-      searchSuggest.style.overflow = "auto";
-    }
+  searchSuggest.style.height = "auto";
+  searchSuggestList.innerHTML ="";
+  for (let j=0;j<recommendSearchArray.length;j++){
+    addSuggestMovieItem(recommendSearchArray[j]);
+  }
+  if (recommendSearchArray.length>5){
+    searchSuggest.style.height = "400px";
+    searchSuggest.style.overflow = "auto";
   }
 }
 
