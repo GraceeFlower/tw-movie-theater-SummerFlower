@@ -38,10 +38,11 @@ loadItems();
 let relatedMovie = [];
 function findSimilarArray(){
   const nowMovieGenres = movieDetailData.genres;
-    let type = nowMovieGenres[0];
-    data.forEach(item => {
-      if (item.genres.includes(type)&&item.id!==movieDetailPageId) { relatedMovie.push(item); }
-    });
+  let type = nowMovieGenres[0];
+  data.forEach(item => {
+    if (item.genres.includes(type)&&item.id!==movieDetailPageId) { relatedMovie.push(item); }
+  });
+  renderSimilarMovie();
 }
 
 //isContain函数用于查找搜索框所写电影名是否在top250的前100的影片库内

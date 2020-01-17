@@ -1,4 +1,4 @@
-.detail-page-content {
+.detail-page {
   padding: 30px 10%;
 }
 
@@ -37,7 +37,8 @@
   text-indent: 29px;
 }
 
-.detail-page-content .item-title {
+.detail-page-content .item-title, 
+.similar-movie-recommend .item-title {
   display: inline-block;
   padding: 0 10px;
   height: 30px;
@@ -81,4 +82,27 @@
 
 .comment-text:first-letter {
   font-size: 17px;
+}
+
+.similar-movie-list {
+  display: flex;
+  padding: 2%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.similar-movie-list li {
+  margin: 5px 3%;
+  text-align: center;
+  font-size: 14px;
+}
+
+.similar-movie-list img {
+  width: 110px;
+  height: 160px;
+}
+
+.similar-movie-average {
+  font-weight: bold;
+  color: #2474b5;
 }
