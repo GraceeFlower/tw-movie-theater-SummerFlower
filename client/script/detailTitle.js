@@ -36,7 +36,7 @@ function findSimilarArray(){
   const nowMovieGenres = movieDetailData.genres;
   let type = nowMovieGenres[0];
   data.forEach(item => {
-    if (item.genres.includes(type)&&item.id!==movieDetailPageId) { relatedMovie.push(item); }
+    if (item.genres.includes(type) && item.id !== movieDetailPageId) {relatedMovie.push(item);}
   });
   renderSimilarMovie();
 }
@@ -63,20 +63,20 @@ function searchOperate() {
 }
 
 let recommendSearchArray = [];
-const searchSuggest=document.getElementsByClassName("search-suggest")[0];
-const searchSuggestList=document.getElementsByClassName("search-suggest-list")[0];
+const searchSuggest = document.getElementsByClassName("search-suggest")[0];
+const searchSuggestList = document.getElementsByClassName("search-suggest-list")[0];
 
-topSearchInput.addEventListener("input", function(event){
+topSearchInput.addEventListener("input", function (event) {
   let searchContent = event.target.value;
   recommendSearchArray = isABitContain(searchContent);
   setSuggestMoviePullDown();
-})
+});
 
 function isABitContain(searchContent) {
   let containThisMovieArray = [];
-  if(searchContent){
+  if (searchContent){
     for (let i = 0; i < data.length; i++) {
-      if (data[i].title.indexOf(searchContent)>=0) {
+      if (data[i].title.indexOf(searchContent) >= 0) {
         containThisMovieArray.push(data[i].id);
       }
     }
@@ -87,17 +87,17 @@ function isABitContain(searchContent) {
 function setSuggestMoviePullDown(){
   searchSuggest.style.height = "auto";
   searchSuggestList.innerHTML ="";
-  for (let j=0;j<recommendSearchArray.length;j++){
+  for (let j = 0; j < recommendSearchArray.length; j++) {
     addSuggestMovieItem(recommendSearchArray[j]);
   }
-  if (recommendSearchArray.length>5){
+  if (recommendSearchArray.length>5) {
     searchSuggest.style.height = "400px";
     searchSuggest.style.overflow = "auto";
   }
 }
 
 function addSuggestMovieItem(movieID) {
-  let suggestMovieData={};
+  let suggestMovieData = {};
   for (let i = 0; i < data.length; i++) {
     if (movieID === data[i].id) {
       suggestMovieData=data[i];
