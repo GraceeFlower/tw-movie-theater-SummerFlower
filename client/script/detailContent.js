@@ -35,6 +35,9 @@ function composeName(nameArr) {
 }
 
 function renderMovieVideo(video) {
+  if (!video.length) {
+    return 'Sorry，暂时没有观影路径哦~';
+  }
   return video.reduce((whole, item) => whole += 
     `<li>
       <a href="${item.sample_link}">${item.source.name}</a>
