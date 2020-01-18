@@ -77,8 +77,6 @@ function renderSimilarMovie() {
 
   similarList.addEventListener("click", function (event) {
     let target = event.target;
-    console.log(target);
-    console.log(target.parentNode);
     if ('similar-movie-list' !== target.className) {
       if ("similar-movie-cover" === target.parentNode.className) {
         window.location.href = "./movieDetails.html?id=" + target.parentNode.parentNode.id;
