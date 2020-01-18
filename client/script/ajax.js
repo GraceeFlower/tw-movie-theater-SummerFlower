@@ -7,16 +7,16 @@ window.ajax = function (options) {
     success: options.success || function (result) {},
     fail: options.fail || function (error) {}
   }
-  var xhr = null;
+  let xhr;
   if (window.XMLHttpRequest) {
     xhr = new XMLHttpRequest();
   } else {
-    xhr = new ActiveXObjcet('Microsoft.XMLHTTP');
+    xhr = new ActiveXObject('Microsoft.XMLHTTP');
   };
-  xhr.open(ajaxData.method,ajaxData.url,true);
-  if(ajaxData.method==='POST'||ajaxData.method==='PUT'){
+  xhr.open(ajaxData.method,ajaxData.url, true);
+  if(ajaxData.method === 'POST' || ajaxData.method === 'PUT'){
     xhr.setRequestHeader('content-type', 'application/json');
-    ajaxData.data= JSON.stringify(ajaxData.data);
+    ajaxData.data = JSON.stringify(ajaxData.data);
   }
   xhr.onerror = () => ajaxData.fail(xhr.status);
   xhr.onload = () => ajaxData.success(JSON.parse(xhr.responseText));
