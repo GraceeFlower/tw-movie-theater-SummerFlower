@@ -36,7 +36,7 @@ function findSimilarArray() {
   const nowMovieGenres = movieDetailData.genres;
   let type = nowMovieGenres[0];
   data.forEach(item => {
-    if (item.genres.includes(type) && item.id !== movieDetailPageId) { relatedMovie.push(item); }
+    if (item.genres.includes(type) && item.id !== movieDetailPageId) {relatedMovie.push(item);}
   });
   renderSimilarMovie();
 }
@@ -70,11 +70,11 @@ topSearchInput.addEventListener("input", function (event) {
   let searchContent = event.target.value;
   recommendSearchArray = isABitContain(searchContent);
   setSuggestMoviePullDown();
-})
+});
 
 function isABitContain(searchContent) {
   let containThisMovieArray = [];
-  if (searchContent) {
+  if (searchContent){
     for (let i = 0; i < data.length; i++) {
       if (data[i].title.indexOf(searchContent) >= 0) {
         containThisMovieArray.push(data[i].id);
@@ -86,11 +86,11 @@ function isABitContain(searchContent) {
 
 function setSuggestMoviePullDown() {
   searchSuggest.style.height = "auto";
-  searchSuggestList.innerHTML = "";
+  searchSuggestList.innerHTML ="";
   for (let j = 0; j < recommendSearchArray.length; j++) {
     addSuggestMovieItem(recommendSearchArray[j]);
   }
-  if (recommendSearchArray.length > 5) {
+  if (recommendSearchArray.length>5) {
     searchSuggest.style.height = "400px";
     searchSuggest.style.overflow = "auto";
   }
