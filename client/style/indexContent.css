@@ -25,7 +25,7 @@ body {
 }
 
 .classification span:hover {
-  color: #ec8aa4;
+  font-weight: bold;
 }
 
 .movie-list {

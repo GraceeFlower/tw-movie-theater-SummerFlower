@@ -29,6 +29,8 @@ movieMenu.addEventListener('click', renderChosenMovie, true);
 function renderChosenMovie(event) {
   [wholePage, currentPage] = [1, 1];
   if (!event.target.className) {
+    [...movieMenu.children].forEach(item => item.style.color = '#000');
+    event.target.style.color = '#ec8aa4';
     let type = event.target.innerHTML;
     movieList.innerHTML = '';
     currentMovie = [];
