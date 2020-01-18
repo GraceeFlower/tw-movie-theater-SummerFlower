@@ -26,7 +26,7 @@ function renderMovieDetail(movie) {
       <div class="comment-list">${renderComment(movie.popular_reviews.slice(0, 5))}</div>
     </div>
   `
-} 
+}
 
 function composeName(nameArr) {
   let res = [];
@@ -35,12 +35,12 @@ function composeName(nameArr) {
 }
 
 function renderMovieVideo(video) {
-  return video.reduce((whole, item) => whole += 
+  return video.reduce((whole, item) => whole +=
     `<li>
       <a href="${item.sample_link}">${item.source.name}</a>
       <span class="${item.need_pay ? 'paying-movie' : 'free-movie'}">${item.need_pay ? '¥付费' : '免费'}</span>
     </li>`
-  , '');
+    , '');
 }
 
 function renderComment(comment) {
@@ -59,18 +59,18 @@ function renderSimilarMovie() {
   similarMovie.innerHTML = `<div class="item-title">相似电影</div><ul class="similar-movie-list"></ul>`;
   const similarList = document.getElementsByClassName('similar-movie-list')[0];
   let randomSimilarIndex;
-  if(relatedMovie.length>12){
-    randomSimilarIndex = Math.floor(Math.random()*(relatedMovie.length-12));
-  }else{
-    randomSimilarIndex=0;
+  if (relatedMovie.length > 12) {
+    randomSimilarIndex = Math.floor(Math.random() * (relatedMovie.length - 12));
+  } else {
+    randomSimilarIndex = 0;
   }
-  similarList.innerHTML = relatedMovie.slice(randomSimilarIndex,randomSimilarIndex+12).reduce((pre, cur) => pre +=
+  similarList.innerHTML = relatedMovie.slice(randomSimilarIndex, randomSimilarIndex + 12).reduce((pre, cur) => pre +=
     `<li id='${cur.id}'>
       <div class="similar-movie-cover"><img src='${cur.images.small}' alt='${cur.title}'/></div>
       <div class="similar-movie-name">${cur.title}</div>
       <div class="similar-movie-average">${judgeAverage(cur.rating.average)}</div>
     </li>`
-  , '');
+    , '');
 
   similarList.addEventListener("click", function (event) {
     let target = event.target;

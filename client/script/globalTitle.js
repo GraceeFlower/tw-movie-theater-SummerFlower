@@ -71,10 +71,10 @@ function setSuggestMoviePullDown() {
 }
 
 function addSuggestMovieItem(movieID) {
-  let suggestMovieData={};
+  let suggestMovieData = {};
   for (let i = 0; i < data.length; i++) {
     if (movieID === data[i].id) {
-      suggestMovieData=data[i];
+      suggestMovieData = data[i];
     }
   }
   searchSuggestList.innerHTML += `
@@ -85,14 +85,14 @@ function addSuggestMovieItem(movieID) {
     </li>`
 }
 
-searchSuggest.addEventListener("click", function(event){
+searchSuggest.addEventListener("click", function (event) {
   let target = event.target;
   if ("suggest-item" === target.className) {
     window.location.href = "./movieDetails.html?id=" + target.id;
   } else {
     window.location.href = "./movieDetails.html?id=" + target.parentNode.id;
   }
-}); 
+});
 
 function judgeAverage(average) {
   return average.toString().length === 1 ? `${average}.0` : average;
