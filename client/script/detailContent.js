@@ -35,7 +35,10 @@ function composeName(nameArr) {
 }
 
 function renderMovieVideo(video) {
-  return video.reduce((whole, item) => whole +=
+  if (!video.length) {
+    return 'Sorry，暂时没有观影路径哦~';
+  }
+  return video.reduce((whole, item) => whole += 
     `<li>
       <a href="${item.sample_link}">${item.source.name}</a>
       <span class="${item.need_pay ? 'paying-movie' : 'free-movie'}">${item.need_pay ? '¥付费' : '免费'}</span>
