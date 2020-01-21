@@ -36,7 +36,7 @@ function findSimilarArray() {
   const nowMovieGenres = movieDetailData.genres;
   let type = nowMovieGenres[0];
   data.forEach(item => {
-    if (item.genres.includes(type) && item.id !== movieDetailPageId) { relatedMovie.push(item); }
+    if (item.genres.includes(type) && item.id !== movieDetailPageId) {relatedMovie.push(item);}
   });
   renderSimilarMovie();
 }

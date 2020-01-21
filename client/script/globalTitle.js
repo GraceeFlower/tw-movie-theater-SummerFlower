@@ -1,6 +1,21 @@
-let header = document.getElementsByTagName("header")[0];
+const header = document.getElementsByTagName("header")[0];
 
-loadSearchData();
+if (thisURL.match(/.+movieDetails.html/)) {
+  loadDetailData();
+  loadDetailSearchData();
+} else {
+  loadSearchData();
+}
+
+let relatedMovie = [];
+function findSimilarArray() {
+  const nowMovieGenres = movieDetailData.genres;
+  let type = nowMovieGenres[0];
+  data.forEach(item => {
+    if (item.genres.includes(type) && item.id !== movieDetailPageId) {relatedMovie.push(item);}
+  });
+  renderSimilarMovie();
+}
 
 function isContain(searchContent) {
   for (let item in data) {
@@ -55,7 +70,7 @@ function setSuggestMoviePullDown() {
   }
 }
 
-function addSuggestMovieItem(movieID) {
+function addSuggestMovieItem() {
   searchSuggestList.innerHTML = recommendSearchArray.reduce((pre, cur) => {
     let suggestMovieData = data.filter(item => (cur === item.id))[0];
     return pre += `
