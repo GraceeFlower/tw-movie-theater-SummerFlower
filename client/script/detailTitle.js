@@ -87,7 +87,6 @@ function isABitContain(searchContent) {
 function setSuggestMoviePullDown() {
   searchSuggest.style.height = "auto";
   searchSuggestList.innerHTML = "";
-  // recommendSearchArray.forEach(item => addSuggestMovieItem(item));
   addSuggestMovieItem();
   if (recommendSearchArray.length > 5) {
     searchSuggest.style.height = "400px";
@@ -98,7 +97,7 @@ function setSuggestMoviePullDown() {
 function addSuggestMovieItem() {
   searchSuggestList.innerHTML = recommendSearchArray.reduce((pre, cur) => {
     let suggestMovieData = data.filter(item => (cur === item.id))[0];
-    return pre +=  `
+    return pre += `
     <li class="suggest-item" id='${suggestMovieData.id}'>
       <img class="suggest-item-img" src='${suggestMovieData.images.small}' />
       <span class="suggest-item-name">${suggestMovieData.title}</span>

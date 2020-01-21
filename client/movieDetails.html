@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="referrer" content="no-referrer" />
-    <title>Detail</title>
 
-    <link href="https://fonts.font.im/css?family=Satisfy" rel="stylesheet">
-    <link rel="stylesheet" href="./style/index.css" />
-    <link rel="stylesheet" href="./style/globalTitle.css" />
-    <link rel="stylesheet" href="./style/movieDeatailContent.css" />
-  </head>
-  <body>
-    <header class="global-title">
-      <div class="top-logo">
-        <a href="./index.html"><img class="top-logo-icon" src="static/flower.png" /></a>
-        <a href="./index.html" class="top-logo-name">SummerFlower</a>
-      </div>
-      <div class="top-search">
-        <input type="text" name="search-text" class="top-search-input" autocomplete="off"/>
-        <div class="search-suggest">
-          <ul class="search-suggest-list"></ul>
-        </div>
-        <input type="button" name="search-button" class="top-search-button" value="Flower一下" onclick="searchOperate()" />
-      </div>
-      <div class="top-sign">
-        <input type="button" name="sign-up" value="注册" class="top-sign-button" />
-        <input type="button" name="sign-in" value="登录" class="top-sign-button" />
-      </div>
-    </header>
-    <div class="detail-page">
-      <div class="detail-page-content"></div>
-      <div class="similar-movie-recommend"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="referrer" content="no-referrer" />
+  <title>Detail</title>
+
+  <link href="https://fonts.font.im/css?family=Satisfy" rel="stylesheet">
+  <link rel="stylesheet" href="./style/index.css" />
+  <link rel="stylesheet" href="./style/globalTitle.css" />
+  <link rel="stylesheet" href="./style/movieDeatailContent.css" />
+</head>
+
+<body>
+  <header class="global-title">
+    <div class="top-logo">
+      <a href="./index.html"><img class="top-logo-icon" src="static/flower.png" /></a>
+      <a href="./index.html" class="top-logo-name">SummerFlower</a>
     </div>
-    <footer>Copyright©️ 2020 SummerFlower</footer>
-  </body>
-  <script src="./script/ajax.js"></script>
-  <script src="./script/detailTitle.js"></script>
-  <script src="./script/detailContent.js"></script>
+    <div class="top-search">
+      <input type="text" name="search-text" class="top-search-input" autocomplete="off" />
+      <div class="search-suggest">
+        <ul class="search-suggest-list"></ul>
+      </div>
+      <input type="button" name="search-button" class="top-search-button" value="Flower一下" onclick="searchOperate()" />
+    </div>
+    <div class="top-sign">
+      <input type="button" name="sign-up" value="注册" class="top-sign-button" />
+      <input type="button" name="sign-in" value="登录" class="top-sign-button" />
+    </div>
+  </header>
+  <div class="detail-page">
+    <div class="detail-page-content"></div>
+    <div class="similar-movie-recommend"></div>
+  </div>
+  <footer>Copyright©️ 2020 SummerFlower</footer>
+</body>
+<script src="./script/ajax.js"></script>
+<script src="./script/detailTitle.js"></script>
+<script src="./script/detailContent.js"></script>
+
 </html>
