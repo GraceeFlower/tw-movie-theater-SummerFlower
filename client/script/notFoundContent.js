@@ -1,5 +1,3 @@
-let thisURL = document.URL;
-let getIdFromURL = thisURL.split("?")[1];
 let nowSearchContent = getIdFromURL.split("=")[1];
 nowSearchContent = decodeURI(decodeURI(nowSearchContent));
 
