@@ -79,9 +79,9 @@ function renderSimilarMovie() {
     let target = event.target;
     if ('similar-movie-list' !== target.className) {
       if ("similar-movie-cover" === target.parentNode.className) {
-        window.location.href = "./movieDetails.html?id=" + target.parentNode.parentNode.id;
+        window.location.href = `./movieDetails.html?id=${target.parentNode.parentNode.id}`;
       } else if ("similar-movie-list" === target.parentNode.parentNode.className) {
-        window.location.href = "./movieDetails.html?id=" + target.parentNode.id;
+        window.location.href = `./movieDetails.html?id=${target.parentNode.id}`;
       }
     }
   })
