@@ -36,29 +36,29 @@ function findSimilarArray() {
   const nowMovieGenres = movieDetailData.genres;
   let type = nowMovieGenres[0];
   data.forEach(item => {
-    if (item.genres.includes(type) && item.id !== movieDetailPageId) {relatedMovie.push(item);}
+    if (item.genres.includes(type) && item.id !== movieDetailPageId) { relatedMovie.push(item); }
   });
   renderSimilarMovie();
 }
 
 function isContain(searchContent) {
-  for (let i = 0; i < data.length; i++) {
-    if (searchContent === data[i].title) {
-      return data[i].id;
+  for (let item in data) {
+    if (searchContent === data[item].title) {
+      return data[item].id;
     }
   }
   return -1;
 }
 
-let topSearchInput = document.getElementsByClassName("top-search-input")[0];
+const topSearchInput = document.getElementsByClassName("top-search-input")[0];
 function searchOperate() {
   let searchContent = topSearchInput.value;
   let searchMovieId = isContain(searchContent);
   if (-1 === searchMovieId) {
-    window.location.href = "./movieNotFound.html?searchContent=" + searchContent;
+    window.location.href = `./movieNotFound.html?searchContent=${searchContent}`;
   } else {
     movieDetailPageId = searchMovieId;
-    window.location.href = "./movieDetails.html?id=" + movieDetailPageId;
+    window.location.href = `./movieDetails.html?id=${movieDetailPageId}`;
   }
 }
 
@@ -74,49 +74,45 @@ topSearchInput.addEventListener("input", function (event) {
 
 function isABitContain(searchContent) {
   let containThisMovieArray = [];
-  if (searchContent){
-    for (let i = 0; i < data.length; i++) {
-      if (data[i].title.indexOf(searchContent) >= 0) {
-        containThisMovieArray.push(data[i].id);
+  if (searchContent) {
+    data.forEach(item => {
+      if (item.title.includes(searchContent)) {
+        containThisMovieArray.push(item.id);
       }
-    }
+    });
   }
   return containThisMovieArray;
 }
 
 function setSuggestMoviePullDown() {
   searchSuggest.style.height = "auto";
-  searchSuggestList.innerHTML ="";
-  for (let j = 0; j < recommendSearchArray.length; j++) {
-    addSuggestMovieItem(recommendSearchArray[j]);
-  }
-  if (recommendSearchArray.length>5) {
+  searchSuggestList.innerHTML = "";
+  // recommendSearchArray.forEach(item => addSuggestMovieItem(item));
+  addSuggestMovieItem();
+  if (recommendSearchArray.length > 5) {
     searchSuggest.style.height = "400px";
     searchSuggest.style.overflow = "auto";
   }
 }
 
-function addSuggestMovieItem(movieID) {
-  let suggestMovieData = {};
-  for (let i = 0; i < data.length; i++) {
-    if (movieID === data[i].id) {
-      suggestMovieData = data[i];
-    }
-  }
-  searchSuggestList.innerHTML += `
+function addSuggestMovieItem() {
+  searchSuggestList.innerHTML = recommendSearchArray.reduce((pre, cur) => {
+    let suggestMovieData = data.filter(item => (cur === item.id))[0];
+    return pre +=  `
     <li class="suggest-item" id='${suggestMovieData.id}'>
-      <image class="suggest-item-img" src='${suggestMovieData.images.small}' >
+      <img class="suggest-item-img" src='${suggestMovieData.images.small}' />
       <span class="suggest-item-name">${suggestMovieData.title}</span>
       <span class="suggest-item-rating">${judgeAverage(suggestMovieData.rating.average)}</span>
     </li>`
+  }, '');
 }
 
 searchSuggest.addEventListener("click", function (event) {
   let target = event.target;
   if ("suggest-item" === target.className) {
-    window.location.href = "./movieDetails.html?id=" + target.id;
+    window.location.href = `./movieDetails.html?id=${target.id}`;
   } else {
-    window.location.href = "./movieDetails.html?id=" + target.parentNode.id;
+    window.location.href = `./movieDetails.html?id=${target.parentNode.id}`;
   }
 })
 
