@@ -4,16 +4,6 @@ const pageInfo = document.getElementsByClassName('current-page')[0];
 let [wholePage, currentPage] = [1, 1];
 let currentMovie;
 
-function loadItems() {
-  ajax({
-    url: BASIC_URL + '/v2/movie/' + top250 + '?start=0&count=100',
-    method: 'GET',
-    success: function (responseText) {
-      data = responseText.subjects;
-      loadMovieMenu(data);
-    }
-  })
-}
 loadItems();
 
 function loadMovieMenu(data) {
