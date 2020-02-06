@@ -4,10 +4,9 @@ const top250 = 'top250';
 let thisURL = document.URL;
 let getIdFromURL = thisURL.split("?")[1];
 let movieDetailPageId;
-let movieDetailData;
 
 function findMovieId() {
-  if (getIdFromURL.length > 1) {
+  if (getIdFromURL) {
     movieDetailPageId = getIdFromURL.split("=")[1];
   }
 }
