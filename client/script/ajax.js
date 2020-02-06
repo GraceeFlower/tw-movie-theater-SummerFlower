@@ -1,3 +1,6 @@
+let movieDetailData;
+let data;
+
 window.ajax = function (options) {
   const ajaxData = {
     url: options.url || "",

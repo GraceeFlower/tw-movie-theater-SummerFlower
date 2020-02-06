@@ -4,8 +4,6 @@ const top250 = 'top250';
 let thisURL = document.URL;
 let getIdFromURL = thisURL.split("?")[1];
 let movieDetailPageId = getIdFromURL.split("=")[1];
-let movieDetailData;
-let data;
 
 function loadItems() {
   ajax({
